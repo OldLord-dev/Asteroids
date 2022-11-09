@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 597728830}
   - component: {fileID: 597728829}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flySpeed: 10
+  shipSprite: {fileID: 605384470}
 --- !u!4 &597728830
 Transform:
   m_ObjectHideFlags: 0
