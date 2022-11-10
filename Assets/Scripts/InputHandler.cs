@@ -6,6 +6,7 @@ using UnityEngine;
 public class InputHandler : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("Speed value between 0 and 30.")]
     private float flySpeed = 10f;
     [SerializeField]
     private GameObject shipSprite;
@@ -13,6 +14,7 @@ public class InputHandler : MonoBehaviour
     {
         Move();
         Rotate();
+        Fire();
     }
 
     private void Move()
@@ -26,5 +28,18 @@ public class InputHandler : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         shipSprite.transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
+    }
+    private void Fire()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            GameObject bullet = Pool.singleton.Get("Bullet");
+            if (bullet != null)
+            {
+                bullet.transform.position = transform.localPosition;
+                bullet.transform.rotation = shipSprite.transform.localRotation;
+                bullet.SetActive(true);
+            }
+        }
     }
 }
