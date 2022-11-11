@@ -19,6 +19,10 @@ public class Bullet : MonoBehaviour
     {
         transform.Translate(new Vector3(0, 4 * speed * Time.deltaTime, 0));
     }
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+        gameObject.SetActive(false);
+    }
     IEnumerator Wait2Seconds()
     {
         yield return new WaitForSeconds(2);
