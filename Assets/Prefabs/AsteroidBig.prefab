@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4525455052375697907}
   - component: {fileID: 4525455052375697905}
   - component: {fileID: 4202184692596697893}
-  - component: {fileID: -2455716639231142146}
   - component: {fileID: -9189805423205813208}
   m_Layer: 3
   m_Name: AsteroidBig
@@ -100,17 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375b75f4820ade44a959c771a5a1ec35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroids:
-  - {fileID: 21300000, guid: 0de34e940fd57b145865ba5f88667581, type: 3}
-  - {fileID: 21300000, guid: f0ea0ac1967ea9545b02924f0cfad74a, type: 3}
-  - {fileID: 21300000, guid: b2fa893291565ed49a2b1b16f7169056, type: 3}
-  - {fileID: 21300000, guid: 2de68dd27ab372a4bb3b7c6d547cc46b, type: 3}
-  - {fileID: 21300000, guid: 51fc2516d1690ff48afa500f2070e6d7, type: 3}
-  - {fileID: 21300000, guid: 90eadf5c26d92fd42b098542be41febd, type: 3}
-  - {fileID: 21300000, guid: 8d3f5c82d4f7ce449a99fdbcea5dd44f, type: 3}
-  - {fileID: 21300000, guid: b73abd0bdc21bf54690355c1f3b115ee, type: 3}
-  asteroidScale: 1
-  asteroidSpeed: 1
+  asteroidData: {fileID: 11400000, guid: 0d770ca95c57449429d0f2d5b9d4925b, type: 2}
 --- !u!58 &4202184692596697893
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -127,18 +116,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.505
---- !u!114 &-2455716639231142146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4525455052375697916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcd08185af8b2fc489be4a57b9917b76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-9189805423205813208
 Rigidbody2D:
   serializedVersion: 4
@@ -159,4 +136,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

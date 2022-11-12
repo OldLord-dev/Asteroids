@@ -4,48 +4,43 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-
     [SerializeField]
-    private List<Sprite> asteroids = new List<Sprite>();
-    [SerializeField]
-    private float asteroidScale;
-    [SerializeField]
-    private float asteroidSpeed = 3f;
-    [SerializeField]
-    private float asteroidPoints = 100;
-
+    private AsteroidData asteroidData;
     private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
     private float randomVelocity;
     private float randomAngle;
+    private Vector2 randomDirection;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        transform.localScale *= asteroidScale;
+        transform.localScale *= asteroidData.AsteroidScale;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnEnable()
     {
-        if(asteroids.Count > 0 && spriteRenderer)
+        if(asteroidData.AsteroidsSpriteSet.Sprites.Count > 0 && spriteRenderer)
         {
-            spriteRenderer.sprite = asteroids[Random.Range(0, asteroids.Count)];
+            spriteRenderer.sprite = asteroidData.AsteroidsSpriteSet.Sprites[Random.Range(0, asteroidData.AsteroidsSpriteSet.Sprites.Count)];
         }
-            randomVelocity = Random.Range(1, 2);
-            randomAngle = Random.Range(1, 2);
             transform.rotation = Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0,0,1)) * transform.rotation;
+            randomDirection = Random.insideUnitCircle.normalized * asteroidData.AsteroidSpeed;
+
 
 
     }
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(randomVelocity * asteroidSpeed * Time.deltaTime, randomAngle * asteroidSpeed * Time.deltaTime, 0);
+        rb.velocity = randomDirection;
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.CompareTag("Bullet"))
         {
-            GameManager.score += asteroidPoints;
+            GameManager.score += asteroidData.AsteroidPoints;
             this.gameObject.SetActive(false);
         }
     }

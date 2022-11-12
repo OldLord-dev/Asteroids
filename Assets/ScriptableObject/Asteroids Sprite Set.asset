@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a91295fb7f7eb84a86dbc4a40b26ce7, type: 3}
+  m_Name: Asteroids Sprite Set
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 0de34e940fd57b145865ba5f88667581, type: 3}
+  - {fileID: 21300000, guid: 51fc2516d1690ff48afa500f2070e6d7, type: 3}
+  - {fileID: 21300000, guid: f0ea0ac1967ea9545b02924f0cfad74a, type: 3}
+  - {fileID: 21300000, guid: 90eadf5c26d92fd42b098542be41febd, type: 3}
+  - {fileID: 21300000, guid: b2fa893291565ed49a2b1b16f7169056, type: 3}
+  - {fileID: 21300000, guid: 8d3f5c82d4f7ce449a99fdbcea5dd44f, type: 3}
+  - {fileID: 21300000, guid: 2de68dd27ab372a4bb3b7c6d547cc46b, type: 3}
+  - {fileID: 21300000, guid: b73abd0bdc21bf54690355c1f3b115ee, type: 3}
