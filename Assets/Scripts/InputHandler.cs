@@ -9,7 +9,7 @@ public class InputHandler : MonoBehaviour
     [Tooltip("Speed value between 0 and 30.")]
     private float flySpeed = 10f;
     [SerializeField]
-    private GameObject shipSprite;
+    private GameObject playerShip;
     void Update()
     {
         Move();
@@ -20,12 +20,12 @@ public class InputHandler : MonoBehaviour
     {
         float horizontalMove = Input.GetAxis("Horizontal");
         float verticalMove = Input.GetAxis("Vertical");
-        transform.Translate(horizontalMove * flySpeed * Time.deltaTime, verticalMove * flySpeed * Time.deltaTime, 0);
+        playerShip.transform.Translate(horizontalMove * flySpeed * Time.deltaTime, verticalMove * flySpeed * Time.deltaTime, 0,Space.World);
     }
     private void Rotate()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        shipSprite.transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
+        playerShip.transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - playerShip.transform.position);
     }
     private void Fire()
     {
@@ -34,8 +34,8 @@ public class InputHandler : MonoBehaviour
             GameObject bullet = Pool.singleton.Get("Bullet");
             if (bullet != null)
             {
-                bullet.transform.position = transform.localPosition;
-                bullet.transform.rotation = shipSprite.transform.localRotation;
+                bullet.transform.position = playerShip.transform.localPosition;
+                bullet.transform.rotation = playerShip.transform.localRotation;
                 bullet.SetActive(true);
             }
         }
