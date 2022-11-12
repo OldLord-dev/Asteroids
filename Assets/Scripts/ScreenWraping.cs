@@ -22,19 +22,15 @@ public class ScreenWraping : MonoBehaviour
         Camera cam = Camera.main;
         Vector3 viewportPosition = cam.WorldToViewportPoint(go.transform.position);
         Vector3 newPosition = go.transform.position;
-        Debug.Log("viewportPosition "+viewportPosition);
         if (viewportPosition.x > 1 || viewportPosition.x < 0)
         {
             newPosition.x = -newPosition.x;
-            Debug.Log("X");
         }
 
         if (viewportPosition.y > 1 || viewportPosition.y < 0)
         {
             newPosition.y = -newPosition.y;
-            Debug.Log("Y");
         }
-        Debug.Log("Nowa pozycja: "+ newPosition);
         go.transform.position = newPosition;
     }
 }
