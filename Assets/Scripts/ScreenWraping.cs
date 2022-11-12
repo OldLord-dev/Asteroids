@@ -5,65 +5,37 @@ using UnityEngine;
 
 public class ScreenWraping : MonoBehaviour
 {
-    SpriteRenderer[] renderers;
-    private bool isWrappingX = false;
-    private bool isWrappingY = false;
-
+    private Vector3 boxColliderSize;
+    private BoxCollider2D boxCollider;
     void Start()
     {
-        renderers = GetComponentsInChildren<SpriteRenderer>();
+        boxColliderSize = -Camera.main.ScreenToWorldPoint(Vector3.zero)*2;
+        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider.size = new Vector2 (boxColliderSize.x, boxColliderSize.y);
     }
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        ScreenWrap();
+        ScreenWrap(collision.gameObject);
     }
-
-    private bool CheckRenderers()
+    private void ScreenWrap(GameObject go)
     {
-        foreach (SpriteRenderer renderer in renderers)
-        {
-            if (renderer.isVisible)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-    private void ScreenWrap()
-    {
-        bool isVisible = CheckRenderers();
-
-        if (isVisible)
-        {
-            isWrappingX = false;
-            isWrappingY = false;
-            return;
-        }
-
-        if (isWrappingX && isWrappingY)
-        {
-            return;
-        }
-
         Camera cam = Camera.main;
-        Vector3 viewportPosition = cam.WorldToViewportPoint(transform.position);
-        Vector3 newPosition = transform.position;
-
-        if (!isWrappingX && (viewportPosition.x > 1 || viewportPosition.x < 0))
+        Vector3 viewportPosition = cam.WorldToViewportPoint(go.transform.position);
+        Vector3 newPosition = go.transform.position;
+        Debug.Log("viewportPosition "+viewportPosition);
+        if (viewportPosition.x > 1 || viewportPosition.x < 0)
         {
             newPosition.x = -newPosition.x;
-
-            isWrappingX = true;
+            Debug.Log("X");
         }
 
-        if (!isWrappingY && (viewportPosition.y > 1 || viewportPosition.y < 0))
+        if (viewportPosition.y > 1 || viewportPosition.y < 0)
         {
             newPosition.y = -newPosition.y;
-
-            isWrappingY = true;
+            Debug.Log("Y");
         }
-
-        transform.position = newPosition;
+        Debug.Log("Nowa pozycja: "+ newPosition);
+        go.transform.position = newPosition;
     }
 }
    
