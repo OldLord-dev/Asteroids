@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375b75f4820ade44a959c771a5a1ec35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAsteroidDestroyed: {fileID: 11400000, guid: 8191b73e7a4bcd4428853c495f0aefcf, type: 2}
   asteroidData: {fileID: 11400000, guid: 8f875edd191adbc4faadf3ca390e26f6, type: 2}
 --- !u!58 &305559578236628423
 CircleCollider2D:
