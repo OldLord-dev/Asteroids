@@ -9,6 +9,8 @@ public class AsteroidSpawner : MonoBehaviour
     void Start()
     {
         upperRightCorner = -Camera.main.ScreenToWorldPoint(Vector3.zero);
+        upperRightCorner.x -= 1;
+        upperRightCorner.y -= 1;
     }
     private void SetRandomSpawnPoint(GameObject a)
     {
@@ -40,9 +42,10 @@ public class AsteroidSpawner : MonoBehaviour
                 }
         }
     }
-    void Update()
+
+    public void Spawn(int enemyShipAmount, int bigAsteroidAmount, int mediumAsteroidAmount, int smallAsteroidAmount)
     {
-        if (Random.Range(0, 100) < 5)
+            for (int i = 0; i < bigAsteroidAmount; i++)
         {
             GameObject a = Pool.singleton.Get("AsteroidBig");
             if (a != null)
@@ -50,14 +53,20 @@ public class AsteroidSpawner : MonoBehaviour
                 SetRandomSpawnPoint(a);
                 a.SetActive(true);
             }
+        }
 
+        for (int i = 0; i < mediumAsteroidAmount; i++)
+        {
             GameObject b = Pool.singleton.Get("AsteroidMedium");
             if (b != null)
             {
                 SetRandomSpawnPoint(b);
                 b.SetActive(true);
             }
+        }
 
+        for (int i = 0; i < smallAsteroidAmount; i++)
+        {
             GameObject c = Pool.singleton.Get("AsteroidSmall");
             if (c != null)
             {
@@ -65,5 +74,16 @@ public class AsteroidSpawner : MonoBehaviour
                 c.SetActive(true);
             }
         }
+
+        for (int i = 0; i < enemyShipAmount; i++)
+        {
+            GameObject enemyShip = Pool.singleton.Get("EnemyShip");
+            if (enemyShip != null)
+            {
+                SetRandomSpawnPoint(enemyShip);
+                enemyShip.SetActive(true);
+            }
+        }
+
     }
 }
