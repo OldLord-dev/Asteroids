@@ -1,14 +1,11 @@
-using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
-
 public class Ship : MonoBehaviour
 {
     [SerializeField]
     private UIGamePlay uiGamePlay;
     [SerializeField]
     private BoxCollider2D screenCollider;
-    public Event onShipDestroyed;
+
     private Collider2D playerCollider;
     private void Start()
     {
