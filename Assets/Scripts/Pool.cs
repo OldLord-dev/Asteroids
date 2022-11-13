@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,7 +42,6 @@ public class Pool : MonoBehaviour
                 return obj;
             }
         }
-
         return null;
     }
     void Start()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyShip : MonoBehaviour
 {
+    [SerializeField]
     public Event onAsteroidDestroyed;
     [SerializeField]
     private AsteroidData enemyShipData;
@@ -64,10 +65,10 @@ public class EnemyShip : MonoBehaviour
         if (coll.gameObject.CompareTag("Bullet"))
         {
             GameManager.score += enemyShipData.AsteroidPoints;
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
         else
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
 
         CancelInvoke();
         onAsteroidDestroyed.Occurred();

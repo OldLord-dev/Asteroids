@@ -7,6 +7,5 @@ public class SpriteSet : ScriptableObject
 {
     [SerializeField]
     private List<Sprite> sprites = new List<Sprite>();
-
     public List<Sprite> Sprites { get { return sprites; } }
 }

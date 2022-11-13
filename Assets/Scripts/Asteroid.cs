@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
+    [SerializeField]
     public Event onAsteroidDestroyed;
     [SerializeField]
     private AsteroidData asteroidData;
@@ -37,10 +36,10 @@ public class Asteroid : MonoBehaviour
         if (coll.gameObject.CompareTag("Bullet"))
         {
             GameManager.score += asteroidData.AsteroidPoints;
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
         else
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
 
         onAsteroidDestroyed.Occurred();
     }

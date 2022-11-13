@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("Speed value between 0 and 30.")]
-    private float flySpeed = 10f;
+    private float flyMaxSpeed = 10f;
     [SerializeField]
     private GameObject playerShip;
     void Update()
@@ -20,7 +17,7 @@ public class InputHandler : MonoBehaviour
     {
         float horizontalMove = Input.GetAxis("Horizontal");
         float verticalMove = Input.GetAxis("Vertical");
-        playerShip.transform.Translate(horizontalMove * flySpeed * Time.deltaTime, verticalMove * flySpeed * Time.deltaTime, 0,Space.World);
+        playerShip.transform.Translate(horizontalMove * flyMaxSpeed * Time.deltaTime, verticalMove * flyMaxSpeed * Time.deltaTime, 0,Space.World);
     }
     private void Rotate()
     {

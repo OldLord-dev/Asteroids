@@ -1,12 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIGamePlay : MonoBehaviour
 {
-    public Text scoreText,levelNumber;
-    public List<GameObject> playerHealth;
+    [SerializeField]
+    private Text scoreText,levelNumber;
+    [SerializeField]
+    private List<GameObject> playerHealth;
     public void OnAsteroidDestroyed()
     {
         scoreText.text = GameManager.score.ToString();

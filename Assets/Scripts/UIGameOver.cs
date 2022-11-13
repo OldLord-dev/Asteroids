@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIGameOver : MonoBehaviour
 {
-    public Text playerName;
-    public Text score;
-    public Text reacherLevel;
-    // Start is called before the first frame update
+    [SerializeField]
+    private Text playerName;
+    [SerializeField]
+    private Text score;
+    [SerializeField]
+    private Text reacherLevel;
     void Start()
     {
         playerName.text = GameManager.playerName;

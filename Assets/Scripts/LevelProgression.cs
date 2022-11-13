@@ -1,18 +1,16 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelProgression : MonoBehaviour
 {
     [SerializeField]
-    GameSetUp gameSetUp;
+    private GameSetUp gameSetUp;
     [SerializeField]
-    AsteroidSpawner asteroidSpawner;
+    private AsteroidSpawner asteroidSpawner;
     [SerializeField]
-    Event onLevelStart;
+    private Event onLevelStart;
     private List<LevelData> levelsetupList;
-    public int numberOfEnemy;
+    private int numberOfEnemy;
     int levelNumber = 0;
     void Start()
     {
@@ -31,7 +29,7 @@ public class LevelProgression : MonoBehaviour
             levelsetupList[levelNumber].MediumAsteroidAmount, levelsetupList[levelNumber].SmallAsteroidAmount);
     }
 
-    public void StartGenericLevel()
+    public void StartGenericLevel()// For testing
     {
         int amount = UnityEngine.Random.Range(0,10);
         numberOfEnemy = 3*amount+5+ amount / 9;
@@ -61,7 +59,6 @@ public class LevelProgression : MonoBehaviour
             onLevelStart.Occurred();
             StartGenericLevel();
         }
-
 
     }
 }

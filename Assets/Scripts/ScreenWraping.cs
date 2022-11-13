@@ -1,7 +1,4 @@
-//using System.Collections;
-//using Unity.VisualScripting;
 using UnityEngine;
-//using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class ScreenWraping : MonoBehaviour
 {

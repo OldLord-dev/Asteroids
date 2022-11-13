@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
@@ -47,21 +44,21 @@ public class AsteroidSpawner : MonoBehaviour
     {
             for (int i = 0; i < bigAsteroidAmount; i++)
         {
-            GameObject a = Pool.singleton.Get("AsteroidBig");
-            if (a != null)
+            GameObject asteroidBig = Pool.singleton.Get("AsteroidBig");
+            if (asteroidBig != null)
             {
-                SetRandomSpawnPoint(a);
-                a.SetActive(true);
+                SetRandomSpawnPoint(asteroidBig);
+                asteroidBig.SetActive(true);
             }
         }
 
         for (int i = 0; i < mediumAsteroidAmount; i++)
         {
-            GameObject b = Pool.singleton.Get("AsteroidMedium");
-            if (b != null)
+            GameObject asteroidMedium = Pool.singleton.Get("AsteroidMedium");
+            if (asteroidMedium != null)
             {
-                SetRandomSpawnPoint(b);
-                b.SetActive(true);
+                SetRandomSpawnPoint(asteroidMedium);
+                asteroidMedium.SetActive(true);
             }
         }
 
