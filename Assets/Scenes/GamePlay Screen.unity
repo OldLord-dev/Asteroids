@@ -646,7 +646,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiGamePlay: {fileID: 160426344}
   screenCollider: {fileID: 2053664393}
-  onShipDestroyed: {fileID: 11400000, guid: 5f41b81a2eda1aa4a9887a7278aa6160, type: 2}
 --- !u!1 &772780093
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,7 +978,7 @@ GameObject:
   - component: {fileID: 1203531249}
   - component: {fileID: 1203531248}
   m_Layer: 5
-  m_Name: Points Text
+  m_Name: Score Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
