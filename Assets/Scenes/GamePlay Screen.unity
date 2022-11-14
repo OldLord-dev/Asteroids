@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeba5a68fff13244c940d2e9045e1911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flySpeed: 7
+  flyMaxSpeed: 10
   playerShip: {fileID: 597728828}
 --- !u!4 &78290819
 Transform:
@@ -1342,7 +1342,6 @@ MonoBehaviour:
   gameSetUp: {fileID: 23826166}
   asteroidSpawner: {fileID: 1365344283}
   onLevelStart: {fileID: 11400000, guid: 53de7b09858a85c4089626c846f808dd, type: 2}
-  numberOfEnemy: 0
 --- !u!4 &1719451026
 Transform:
   m_ObjectHideFlags: 0

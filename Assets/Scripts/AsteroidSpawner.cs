@@ -81,6 +81,5 @@ public class AsteroidSpawner : MonoBehaviour
                 enemyShip.SetActive(true);
             }
         }
-
     }
 }
