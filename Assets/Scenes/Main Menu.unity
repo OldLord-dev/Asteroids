@@ -516,7 +516,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Please enter Your name first
 
-    And click Enter'
+    And press Enter'
 --- !u!222 &353514781
 CanvasRenderer:
   m_ObjectHideFlags: 0
