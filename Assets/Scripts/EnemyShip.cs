@@ -46,8 +46,10 @@ public class EnemyShip : MonoBehaviour
 
         if (Time.time > nextFire)
         {
+            if (Random.Range(0, 100) < 2) { 
             nextFire = Time.time + fireRate;
             EnemyFire();
+            }
         }
     }
     private void EnemyFire()

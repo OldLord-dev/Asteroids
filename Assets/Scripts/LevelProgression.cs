@@ -32,8 +32,8 @@ public class LevelProgression : MonoBehaviour
     public void StartGenericLevel()// For testing
     {
         int amount = UnityEngine.Random.Range(0,10);
-        numberOfEnemy = 3*amount+5+ amount / 9;
-        asteroidSpawner.Spawn(amount+2, amount+1, amount+2, amount/9);
+        numberOfEnemy = 3*amount+5+ amount / 8;
+        asteroidSpawner.Spawn(amount / 8, amount+1, amount+2, amount+2);
     }
     public void OnEnemyDestroyed()
     {
