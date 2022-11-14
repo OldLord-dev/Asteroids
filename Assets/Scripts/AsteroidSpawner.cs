@@ -64,11 +64,11 @@ public class AsteroidSpawner : MonoBehaviour
 
         for (int i = 0; i < smallAsteroidAmount; i++)
         {
-            GameObject c = Pool.singleton.Get("AsteroidSmall");
-            if (c != null)
+            GameObject asteroidSmall = Pool.singleton.Get("AsteroidSmall");
+            if (asteroidSmall != null)
             {
-                SetRandomSpawnPoint(c);
-                c.SetActive(true);
+                SetRandomSpawnPoint(asteroidSmall);
+                asteroidSmall.SetActive(true);
             }
         }
 
